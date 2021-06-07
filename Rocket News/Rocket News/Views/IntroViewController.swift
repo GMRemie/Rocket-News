@@ -9,10 +9,11 @@ import UIKit
 
 class IntroViewController: UIViewController {
 
+    @IBOutlet weak var startReadingBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        startReadingBtn.roundCorners()
     }
     
 

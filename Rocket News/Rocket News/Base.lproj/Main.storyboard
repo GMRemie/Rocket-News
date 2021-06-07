@@ -59,6 +59,9 @@
                             <constraint firstItem="fs1-V2-0QN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="40" id="yxY-Yj-Z4j"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="startReadingBtn" destination="hzp-3h-FUH" id="epV-cy-uHL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
