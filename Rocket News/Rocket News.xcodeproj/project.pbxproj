@@ -28,6 +28,11 @@
 		D443CC7B266EB5E50091DFF2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC7A266EB5E50091DFF2 /* Article.swift */; };
 		D443CC7C266EB5E50091DFF2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC7A266EB5E50091DFF2 /* Article.swift */; };
 		D443CC7D266EB5E50091DFF2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC7A266EB5E50091DFF2 /* Article.swift */; };
+		D443CC7F266EBBA60091DFF2 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC7E266EBBA60091DFF2 /* ArticleViewController.swift */; };
+		D443CC80266EBBA60091DFF2 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC7E266EBBA60091DFF2 /* ArticleViewController.swift */; };
+		D443CC82266EBC220091DFF2 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC81266EBC220091DFF2 /* ArticleViewModel.swift */; };
+		D443CC83266EBC220091DFF2 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC81266EBC220091DFF2 /* ArticleViewModel.swift */; };
+		D443CC84266EBC220091DFF2 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC81266EBC220091DFF2 /* ArticleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +73,8 @@
 		D443CC73266EB3CB0091DFF2 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		D443CC76266EB5110091DFF2 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
 		D443CC7A266EB5E50091DFF2 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		D443CC7E266EBBA60091DFF2 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
+		D443CC81266EBC220091DFF2 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +172,7 @@
 				D443CC6D266EA96C0091DFF2 /* IntroViewController.swift */,
 				D443CC70266EB3C30091DFF2 /* NewsViewController.swift */,
 				D443CC73266EB3CB0091DFF2 /* HistoryViewController.swift */,
+				D443CC7E266EBBA60091DFF2 /* ArticleViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -173,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				D443CC76266EB5110091DFF2 /* NewsViewModel.swift */,
+				D443CC81266EBC220091DFF2 /* ArticleViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -322,6 +331,8 @@
 				D443CC71266EB3C30091DFF2 /* NewsViewController.swift in Sources */,
 				D443CC35266EA8360091DFF2 /* AppDelegate.swift in Sources */,
 				D443CC74266EB3CB0091DFF2 /* HistoryViewController.swift in Sources */,
+				D443CC82266EBC220091DFF2 /* ArticleViewModel.swift in Sources */,
+				D443CC7F266EBBA60091DFF2 /* ArticleViewController.swift in Sources */,
 				D443CC37266EA8360091DFF2 /* SceneDelegate.swift in Sources */,
 				D443CC77266EB5110091DFF2 /* NewsViewModel.swift in Sources */,
 			);
@@ -332,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D443CC4F266EA8370091DFF2 /* Rocket_NewsTests.swift in Sources */,
+				D443CC83266EBC220091DFF2 /* ArticleViewModel.swift in Sources */,
 				D443CC79266EB5190091DFF2 /* NewsViewModel.swift in Sources */,
 				D443CC7C266EB5E50091DFF2 /* Article.swift in Sources */,
 			);
@@ -342,7 +354,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D443CC72266EB3C30091DFF2 /* NewsViewController.swift in Sources */,
+				D443CC84266EBC220091DFF2 /* ArticleViewModel.swift in Sources */,
 				D443CC5A266EA8370091DFF2 /* Rocket_NewsUITests.swift in Sources */,
+				D443CC80266EBBA60091DFF2 /* ArticleViewController.swift in Sources */,
 				D443CC7D266EB5E50091DFF2 /* Article.swift in Sources */,
 				D443CC78266EB5110091DFF2 /* NewsViewModel.swift in Sources */,
 				D443CC6F266EA96C0091DFF2 /* IntroViewController.swift in Sources */,

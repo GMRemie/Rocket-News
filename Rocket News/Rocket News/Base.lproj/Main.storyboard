@@ -127,6 +127,7 @@
                     <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="XzA-2q-XAn"/>
                     <connections>
                         <outlet property="tableView" destination="BwG-h8-m8u" id="7AD-Rn-okL"/>
+                        <segue destination="2ln-nT-eYV" kind="presentation" identifier="viewArticle" modalPresentationStyle="fullScreen" id="mbW-sR-3kf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmg-qS-HkP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -150,6 +151,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YyB-QU-jaX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-137.68115942028987" y="25.446428571428569"/>
+        </scene>
+        <!--Article View Controller-->
+        <scene sceneID="4Dd-k2-Wgc">
+            <objects>
+                <viewController id="8lo-WJ-aE7" customClass="ArticleViewController" customModule="Rocket_News" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="GXG-pb-YAa">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTM-26-HHK">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mdy-Dc-vnN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mdy-Dc-vnN" firstAttribute="trailing" secondItem="sTM-26-HHK" secondAttribute="trailing" id="1SZ-Pu-SCK"/>
+                            <constraint firstItem="sTM-26-HHK" firstAttribute="leading" secondItem="mdy-Dc-vnN" secondAttribute="leading" id="5KW-cA-lZ0"/>
+                            <constraint firstItem="sTM-26-HHK" firstAttribute="top" secondItem="mdy-Dc-vnN" secondAttribute="top" id="K8D-gm-bRz"/>
+                            <constraint firstItem="mdy-Dc-vnN" firstAttribute="bottom" secondItem="sTM-26-HHK" secondAttribute="bottom" id="kot-vH-FO2"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="j9m-AV-U6z">
+                        <barButtonItem key="leftBarButtonItem" title="Close" id="1AA-Yf-QwH">
+                            <connections>
+                                <action selector="closeArticleClicked:" destination="8lo-WJ-aE7" id="Ubc-fj-edg"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="webView" destination="sTM-26-HHK" id="fkp-Y2-q3g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="viA-vf-Eiw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1132" y="-696"/>
         </scene>
         <!--History-->
         <scene sceneID="aAb-F8-pjZ">
@@ -196,6 +238,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2J-bJ-d6g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1525" y="25"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="pEI-b0-yo9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2ln-nT-eYV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="saq-8L-ar7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8lo-WJ-aE7" kind="relationship" relationship="rootViewController" id="ET1-IP-bjL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ooQ-5n-6DK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="257" y="-696"/>
         </scene>
     </scenes>
     <resources>
