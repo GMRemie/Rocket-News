@@ -68,7 +68,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1552" y="35"/>
+            <point key="canvasLocation" x="-920" y="25"/>
         </scene>
         <!--News-->
         <scene sceneID="c9u-Pg-QYE">
@@ -111,6 +111,9 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="News" image="newspaper" catalog="system" id="XzA-2q-XAn"/>
+                    <connections>
+                        <outlet property="tableView" destination="BwG-h8-m8u" id="7AD-Rn-okL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmg-qS-HkP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
