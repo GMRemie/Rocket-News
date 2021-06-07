@@ -22,6 +22,12 @@
 		D443CC72266EB3C30091DFF2 /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC70266EB3C30091DFF2 /* NewsViewController.swift */; };
 		D443CC74266EB3CB0091DFF2 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC73266EB3CB0091DFF2 /* HistoryViewController.swift */; };
 		D443CC75266EB3CB0091DFF2 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC73266EB3CB0091DFF2 /* HistoryViewController.swift */; };
+		D443CC77266EB5110091DFF2 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC76266EB5110091DFF2 /* NewsViewModel.swift */; };
+		D443CC78266EB5110091DFF2 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC76266EB5110091DFF2 /* NewsViewModel.swift */; };
+		D443CC79266EB5190091DFF2 /* NewsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC76266EB5110091DFF2 /* NewsViewModel.swift */; };
+		D443CC7B266EB5E50091DFF2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC7A266EB5E50091DFF2 /* Article.swift */; };
+		D443CC7C266EB5E50091DFF2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC7A266EB5E50091DFF2 /* Article.swift */; };
+		D443CC7D266EB5E50091DFF2 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC7A266EB5E50091DFF2 /* Article.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +66,8 @@
 		D443CC6D266EA96C0091DFF2 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		D443CC70266EB3C30091DFF2 /* NewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		D443CC73266EB3CB0091DFF2 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		D443CC76266EB5110091DFF2 /* NewsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsViewModel.swift; sourceTree = "<group>"; };
+		D443CC7A266EB5E50091DFF2 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +154,7 @@
 		D443CC67266EA85C0091DFF2 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D443CC7A266EB5E50091DFF2 /* Article.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +172,7 @@
 		D443CC69266EA86C0091DFF2 /* View Models */ = {
 			isa = PBXGroup;
 			children = (
+				D443CC76266EB5110091DFF2 /* NewsViewModel.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -307,11 +317,13 @@
 			files = (
 				D443CC6E266EA96C0091DFF2 /* IntroViewController.swift in Sources */,
 				D443CC3F266EA8360091DFF2 /* Rocket_News.xcdatamodeld in Sources */,
+				D443CC7B266EB5E50091DFF2 /* Article.swift in Sources */,
 				D443CC6C266EA8CC0091DFF2 /* ButtonExtension.swift in Sources */,
 				D443CC71266EB3C30091DFF2 /* NewsViewController.swift in Sources */,
 				D443CC35266EA8360091DFF2 /* AppDelegate.swift in Sources */,
 				D443CC74266EB3CB0091DFF2 /* HistoryViewController.swift in Sources */,
 				D443CC37266EA8360091DFF2 /* SceneDelegate.swift in Sources */,
+				D443CC77266EB5110091DFF2 /* NewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +332,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D443CC4F266EA8370091DFF2 /* Rocket_NewsTests.swift in Sources */,
+				D443CC79266EB5190091DFF2 /* NewsViewModel.swift in Sources */,
+				D443CC7C266EB5E50091DFF2 /* Article.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,6 +343,8 @@
 			files = (
 				D443CC72266EB3C30091DFF2 /* NewsViewController.swift in Sources */,
 				D443CC5A266EA8370091DFF2 /* Rocket_NewsUITests.swift in Sources */,
+				D443CC7D266EB5E50091DFF2 /* Article.swift in Sources */,
+				D443CC78266EB5110091DFF2 /* NewsViewModel.swift in Sources */,
 				D443CC6F266EA96C0091DFF2 /* IntroViewController.swift in Sources */,
 				D443CC75266EB3CB0091DFF2 /* HistoryViewController.swift in Sources */,
 			);
