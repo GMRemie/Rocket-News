@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D443CC35266EA8360091DFF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC34266EA8360091DFF2 /* AppDelegate.swift */; };
 		D443CC37266EA8360091DFF2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC36266EA8360091DFF2 /* SceneDelegate.swift */; };
-		D443CC39266EA8360091DFF2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC38266EA8360091DFF2 /* ViewController.swift */; };
 		D443CC3C266EA8360091DFF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D443CC3A266EA8360091DFF2 /* Main.storyboard */; };
 		D443CC3F266EA8360091DFF2 /* Rocket_News.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D443CC3D266EA8360091DFF2 /* Rocket_News.xcdatamodeld */; };
 		D443CC41266EA8370091DFF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D443CC40266EA8370091DFF2 /* Assets.xcassets */; };
@@ -39,7 +38,6 @@
 		D443CC31266EA8360091DFF2 /* Rocket News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rocket News.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D443CC34266EA8360091DFF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D443CC36266EA8360091DFF2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D443CC38266EA8360091DFF2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D443CC3B266EA8360091DFF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D443CC3E266EA8360091DFF2 /* Rocket_News.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Rocket_News.xcdatamodel; sourceTree = "<group>"; };
 		D443CC40266EA8370091DFF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -101,9 +99,12 @@
 		D443CC33266EA8360091DFF2 /* Rocket News */ = {
 			isa = PBXGroup;
 			children = (
+				D443CC6A266EA8720091DFF2 /* Extensions */,
+				D443CC69266EA86C0091DFF2 /* View Models */,
+				D443CC68266EA8620091DFF2 /* Views */,
+				D443CC67266EA85C0091DFF2 /* Models */,
 				D443CC34266EA8360091DFF2 /* AppDelegate.swift */,
 				D443CC36266EA8360091DFF2 /* SceneDelegate.swift */,
-				D443CC38266EA8360091DFF2 /* ViewController.swift */,
 				D443CC3A266EA8360091DFF2 /* Main.storyboard */,
 				D443CC40266EA8370091DFF2 /* Assets.xcassets */,
 				D443CC42266EA8370091DFF2 /* LaunchScreen.storyboard */,
@@ -129,6 +130,34 @@
 				D443CC5B266EA8370091DFF2 /* Info.plist */,
 			);
 			path = "Rocket NewsUITests";
+			sourceTree = "<group>";
+		};
+		D443CC67266EA85C0091DFF2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D443CC68266EA8620091DFF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D443CC69266EA86C0091DFF2 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		D443CC6A266EA8720091DFF2 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,7 +291,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D443CC3F266EA8360091DFF2 /* Rocket_News.xcdatamodeld in Sources */,
-				D443CC39266EA8360091DFF2 /* ViewController.swift in Sources */,
 				D443CC35266EA8360091DFF2 /* AppDelegate.swift in Sources */,
 				D443CC37266EA8360091DFF2 /* SceneDelegate.swift in Sources */,
 			);
