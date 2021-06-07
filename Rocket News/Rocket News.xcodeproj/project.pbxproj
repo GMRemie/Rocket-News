@@ -15,6 +15,9 @@
 		D443CC44266EA8370091DFF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D443CC42266EA8370091DFF2 /* LaunchScreen.storyboard */; };
 		D443CC4F266EA8370091DFF2 /* Rocket_NewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC4E266EA8370091DFF2 /* Rocket_NewsTests.swift */; };
 		D443CC5A266EA8370091DFF2 /* Rocket_NewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC59266EA8370091DFF2 /* Rocket_NewsUITests.swift */; };
+		D443CC6C266EA8CC0091DFF2 /* ButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC6B266EA8CC0091DFF2 /* ButtonExtension.swift */; };
+		D443CC6E266EA96C0091DFF2 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC6D266EA96C0091DFF2 /* IntroViewController.swift */; };
+		D443CC6F266EA96C0091DFF2 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC6D266EA96C0091DFF2 /* IntroViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,8 @@
 		D443CC55266EA8370091DFF2 /* Rocket NewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Rocket NewsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D443CC59266EA8370091DFF2 /* Rocket_NewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rocket_NewsUITests.swift; sourceTree = "<group>"; };
 		D443CC5B266EA8370091DFF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D443CC6B266EA8CC0091DFF2 /* ButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtension.swift; sourceTree = "<group>"; };
+		D443CC6D266EA96C0091DFF2 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +147,7 @@
 		D443CC68266EA8620091DFF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D443CC6D266EA96C0091DFF2 /* IntroViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +162,7 @@
 		D443CC6A266EA8720091DFF2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D443CC6B266EA8CC0091DFF2 /* ButtonExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -290,7 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D443CC6E266EA96C0091DFF2 /* IntroViewController.swift in Sources */,
 				D443CC3F266EA8360091DFF2 /* Rocket_News.xcdatamodeld in Sources */,
+				D443CC6C266EA8CC0091DFF2 /* ButtonExtension.swift in Sources */,
 				D443CC35266EA8360091DFF2 /* AppDelegate.swift in Sources */,
 				D443CC37266EA8360091DFF2 /* SceneDelegate.swift in Sources */,
 			);
@@ -309,6 +318,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D443CC5A266EA8370091DFF2 /* Rocket_NewsUITests.swift in Sources */,
+				D443CC6F266EA96C0091DFF2 /* IntroViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
