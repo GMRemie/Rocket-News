@@ -14,8 +14,7 @@ class NewsViewModel {
     
     var articles: [Article] = []{
         didSet{
-            print("Updated")
-            print(articles[0].url)
+            reloadTableView?()
         }
     }
     

@@ -15,8 +15,15 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dataModel.reloadTableView = {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
 
         dataModel.request()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -26,11 +33,13 @@ class NewsViewController: UIViewController {
 
 extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        dataModel.numberOfCells
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! UITableViewCell
+        cell.textLabel?.text = dataModel.cellAtIndex(indexPath.row).title
+        return cell
     }
     
 }
