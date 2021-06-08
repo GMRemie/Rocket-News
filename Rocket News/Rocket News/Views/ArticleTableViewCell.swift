@@ -29,9 +29,8 @@ class ArticleTableViewCell: UITableViewCell {
     public func populateCell(_ article: Article){
         title.text = article.title
         source.text = article.newsSite
-        let progressString = article.progress > 0 ? "\(String(format: "%.0f", article.progress))%" : ""
-        progressBar.progress = article.progress / 100
-        
+        let progressString = article.progress > 0 ? "\(String(format: "%.0f", (article.progress / 65) * 100))%" : ""
+        progressBar.progress = (article.progress / 65 )
         progress.text = progressString
 
     }

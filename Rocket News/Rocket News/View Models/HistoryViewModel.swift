@@ -17,6 +17,7 @@ class HistoryViewModel {
     
     var articles:[Article] = []{
         didSet{
+            articles = articles.sorted(by: {$0.id > $1.id})
             refreshTableViews?()
         }
     }
