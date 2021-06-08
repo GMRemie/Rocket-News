@@ -6,7 +6,6 @@
 //
 
 import XCTest
-@testable import Rocket_News
 
 class Rocket_NewsTests: XCTestCase {
 
@@ -30,4 +29,72 @@ class Rocket_NewsTests: XCTestCase {
         }
     }
 
+    
+    
+    //MARK:: News View Model
+    
+    // Test to see if the network request is working with combine and returning data.
+    func testNetworkRequest() {
+        let dataModel = NewsViewModel()
+        
+        dataModel.reloadTableView = {
+            XCTAssertNotNil(dataModel.articles)
+            XCTAssert(dataModel.numberOfCells > 0)
+        }
+        
+        dataModel.request()
+    }
+    
+    
+    // Make sure that only https articles are in the array after data is pulled. If http articles get thrown in, we'll run in to transport security errors.
+    func testATSSort() {
+        
+        let dataModel = NewsViewModel()
+        
+        dataModel.reloadTableView = {
+            XCTAssertNil(dataModel.articles.filter({!$0.url.contains("https:")}))
+        }
+        
+        dataModel.request()
+    }
+    
+    
+    func testNumberOfCells() {
+        let dataModel = NewsViewModel()
+        
+        dataModel.reloadTableView = {
+            XCTAssertEqual(dataModel.articles.count, dataModel.numberOfCells)
+        }
+        
+        dataModel.request()
+    }
+    
+    func testCellReturn() {
+        let dataModel = NewsViewModel()
+        
+        dataModel.reloadTableView = {
+            let random = Int.random(in: 0..<dataModel.numberOfCells)
+            XCTAssertEqual(dataModel.articles[random].id, dataModel.cellAtIndex(random).id)
+        }
+        
+        dataModel.request()
+    }
+    func testReloadFuncCall(){
+        let dataModel = NewsViewModel()
+        
+        dataModel.reloadTableView = {
+            XCTAssertTrue(true)
+        }
+        
+        dataModel.request()
+    }
+    
+
+    
+    //MARK:: Article Tests
+    /*  ------------------- */
+
+ 
+    
+    
 }

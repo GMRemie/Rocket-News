@@ -29,9 +29,7 @@ class ArticleViewModel {
     
     
     func prepareToClose(){
-        
-        // testing
-       let _ = CoreDataHelper((UIApplication.shared.delegate as! AppDelegate ), article!, Float(progress))
+        let _ = CoreDataHelper((UIApplication.shared.delegate as! AppDelegate ), article!, Float(progress))
 
         closeView?()
         

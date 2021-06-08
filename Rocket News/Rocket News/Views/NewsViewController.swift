@@ -19,7 +19,7 @@ class NewsViewController: UIViewController {
         tableView.register(UINib(nibName: "ArticleTableViewCell", bundle: .main), forCellReuseIdentifier: "cell")
 
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 260
+        tableView.estimatedRowHeight = 90
 
         
         dataModel.reloadTableView = {

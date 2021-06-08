@@ -57,7 +57,7 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var article = dataModel!.getArticleByIndex(indexPath.row)
+        let article = dataModel!.getArticleByIndex(indexPath.row)
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ArticleTableViewCell
         cell.populateCell(article)
         

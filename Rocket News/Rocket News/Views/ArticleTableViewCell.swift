@@ -9,7 +9,7 @@ import UIKit
 
 class ArticleTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var source: UILabel!
     @IBOutlet weak var progress: UILabel!
@@ -27,11 +27,11 @@ class ArticleTableViewCell: UITableViewCell {
     }
     
     public func populateCell(_ article: Article){
-        print("Called on \(article.id)")
-        // do thumbnail image
         title.text = article.title
         source.text = article.newsSite
         let progressString = article.progress > 0 ? "\(String(format: "%.0f", article.progress))%" : ""
+        progressBar.progress = article.progress / 100
+        
         progress.text = progressString
 
     }
