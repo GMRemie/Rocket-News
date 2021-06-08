@@ -27,10 +27,13 @@ class ArticleTableViewCell: UITableViewCell {
     }
     
     public func populateCell(_ article: Article){
+        print("Called on \(article.id)")
         // do thumbnail image
         title.text = article.title
         source.text = article.newsSite
-        progress.text = "0%"
+        let progressString = article.progress > 0 ? "\(String(format: "%.0f", article.progress))%" : ""
+        progress.text = progressString
+
     }
     
 }

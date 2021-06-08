@@ -18,6 +18,13 @@ class HistoryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(UINib(nibName: "ArticleTableViewCell", bundle: .main), forCellReuseIdentifier: "cell")
+
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 260
+
+        
+        
         dataModel = HistoryViewModel(UIApplication.shared.delegate as! AppDelegate)
 
         // Do any additional setup after loading the view.
@@ -51,8 +58,8 @@ extension HistoryViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var article = dataModel!.getArticleByIndex(indexPath.row)
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! UITableViewCell
-        cell.textLabel?.text = "\(article.id)   -- \(article.progress)%"
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ArticleTableViewCell
+        cell.populateCell(article)
         
         return cell
     }

@@ -19,6 +19,11 @@ class NewsViewModel {
         }
     }
     
+    func loadImages(){
+        
+        
+        
+    }
     
     
     var numberOfCells: Int {

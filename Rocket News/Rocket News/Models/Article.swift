@@ -20,7 +20,12 @@ struct Article: Codable {
     var newsSite: String
     var publishedAt: String
     var summary: String
-    lazy var progress:Float = 0
+    var progress:Float = 0
+    
+    private enum CodingKeys: String, CodingKey {
+        case id,title,url,imageUrl,newsSite,publishedAt,summary
+    }
+    
 
     init(_ data: NSManagedObject) {
         self.id = data.value(forKey: "id") as! Int

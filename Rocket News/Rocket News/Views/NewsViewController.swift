@@ -53,6 +53,7 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ArticleTableViewCell
+        cell.tag = dataModel.cellAtIndex(indexPath.row).id
         cell.populateCell(dataModel.cellAtIndex(indexPath.row))
         return cell
     }
