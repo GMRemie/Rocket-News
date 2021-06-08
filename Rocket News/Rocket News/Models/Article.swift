@@ -6,9 +6,12 @@
 //
 
 import Foundation
-
+import CoreData
 
 struct Article: Codable {
+    
+    // Side note: Article could extend NSManagedObject as well - but due to unfamiliarity with doing such, I left this as a codable.
+    
     
     var id: Int
     var title: String
@@ -17,4 +20,17 @@ struct Article: Codable {
     var newsSite: String
     var publishedAt: String
     var summary: String
+    lazy var progress:Float = 0
+
+    init(_ data: NSManagedObject) {
+        self.id = data.value(forKey: "id") as! Int
+        self.title = data.value(forKey: "title") as! String
+        self.url = data.value(forKey: "url") as! String
+        self.imageUrl = data.value(forKey: "imageUrl") as! String
+        self.newsSite = data.value(forKey: "newsSite") as! String
+        self.publishedAt = data.value(forKey: "publishedAt") as? String ?? ""
+        self.summary = data.value(forKey: "summary") as? String ?? ""
+        self.progress = data.value(forKey: "progress") as! Float
+    }
+    
 }

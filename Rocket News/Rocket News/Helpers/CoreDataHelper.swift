@@ -17,6 +17,9 @@ class CoreDataHelper {
     var progress: Float = 0.0
     
     
+    
+    
+    
     // Initializer for general usage in History tab
     init(_ appDelegate: AppDelegate) {
         self.appDelegate = appDelegate
@@ -41,6 +44,9 @@ class CoreDataHelper {
         let articleObj = NSManagedObject(entity: entity!, insertInto: context)
 
         articleObj.setValue(article.id, forKey: "id")
+        articleObj.setValue(article.title, forKey: "title")
+        articleObj.setValue(article.summary, forKey: "summary")
+        articleObj.setValue(article.publishedAt, forKey: "publishedAt")
         articleObj.setValue(article.imageUrl, forKey: "imageUrl")
         articleObj.setValue(article.newsSite, forKey: "newsSite")
         articleObj.setValue(progress, forKey: "progress")
@@ -98,18 +104,24 @@ class CoreDataHelper {
     }
     
     
-    func loadArticles(){
+    func loadArticles() -> [Article]{
+        var articles:[Article] = []
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Articles")
         request.returnsObjectsAsFaults = false
+        
+    
         do {
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
-                print(data)
+                articles.append(Article(data))
             }
         } catch {
             print("Error loading data")
         }
+        
+        articles.sorted(by: {$0.title > $1.title})
+        return articles
     }
     
     

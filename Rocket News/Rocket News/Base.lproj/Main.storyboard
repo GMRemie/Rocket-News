@@ -204,6 +204,20 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gzl-nH-gKr">
                                 <rect key="frame" x="0.0" y="148.5" width="414" height="664.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="QXE-4T-YTW">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QXE-4T-YTW" id="OlU-KI-Zc7">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Rxp-ta-eQH" id="Ruf-zR-vG0"/>
+                                    <outlet property="delegate" destination="Rxp-ta-eQH" id="ZLE-oC-8tG"/>
+                                </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Vg-ij-LSn">
                                 <rect key="frame" x="41.5" y="66" width="331" height="48"/>
@@ -234,6 +248,10 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="History" image="text.book.closed" catalog="system" id="ItZ-se-ht4"/>
+                    <connections>
+                        <outlet property="tableView" destination="gzl-nH-gKr" id="fb8-Vy-f9u"/>
+                        <segue destination="2ln-nT-eYV" kind="presentation" identifier="viewArticle" modalPresentationStyle="fullScreen" id="k2H-e8-Mro"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2J-bJ-d6g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -258,6 +276,9 @@
             <point key="canvasLocation" x="257" y="-696"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="k2H-e8-Mro"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="intro_light" width="543.5" height="421.5"/>
         <image name="newspaper" catalog="system" width="128" height="108"/>

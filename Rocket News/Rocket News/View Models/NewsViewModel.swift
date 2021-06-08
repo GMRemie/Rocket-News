@@ -42,9 +42,6 @@ class NewsViewModel {
             .decode(type: [Article].self, decoder: JSONDecoder())
             .replaceError(with: [])
             .eraseToAnyPublisher()
-            
             .assign(to: \.articles, on: self)
-        
     }
-    
 }
