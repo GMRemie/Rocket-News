@@ -17,32 +17,34 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Source" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEZ-TZ-Pk0">
-                        <rect key="frame" x="32" y="50.5" width="128" height="20.5"/>
+                        <rect key="frame" x="32" y="51" width="128" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phs-Lf-F51">
-                        <rect key="frame" x="160" y="50.5" width="128" height="20.5"/>
+                        <rect key="frame" x="160" y="51" width="128" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUa-Ba-ofK">
-                        <rect key="frame" x="32" y="16" width="256" height="29.5"/>
+                        <rect key="frame" x="32" y="16" width="256" height="30"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="uT9-Va-Jc2">
                         <rect key="frame" x="32" y="76" width="256" height="4"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="4" id="erR-cS-Nav"/>
+                        </constraints>
                     </progressView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="Phs-Lf-F51" firstAttribute="height" secondItem="MEZ-TZ-Pk0" secondAttribute="height" id="58r-4N-dYZ"/>
                     <constraint firstItem="Phs-Lf-F51" firstAttribute="width" secondItem="aUa-Ba-ofK" secondAttribute="width" multiplier="0.5" id="8NH-Ur-v7k"/>
                     <constraint firstItem="Phs-Lf-F51" firstAttribute="centerY" secondItem="MEZ-TZ-Pk0" secondAttribute="centerY" id="9Op-Hb-jNt"/>
-                    <constraint firstItem="uT9-Va-Jc2" firstAttribute="height" secondItem="aUa-Ba-ofK" secondAttribute="height" multiplier="0.133333" id="Bvb-GR-C6o"/>
                     <constraint firstItem="uT9-Va-Jc2" firstAttribute="centerX" secondItem="aUa-Ba-ofK" secondAttribute="centerX" id="FYW-3O-EdA"/>
                     <constraint firstItem="aUa-Ba-ofK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="5" id="OU1-vd-cfo"/>
                     <constraint firstItem="uT9-Va-Jc2" firstAttribute="top" secondItem="MEZ-TZ-Pk0" secondAttribute="bottom" constant="5" id="WUc-G6-8UQ"/>
