@@ -47,10 +47,14 @@ extension ArticleViewController: WKUIDelegate, WKNavigationDelegate, UIScrollVie
         let articleUrl = URL(string: article!.url)
         
         webView.load(URLRequest(url: articleUrl!))
+        
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("Scrolled")
+        // Make sure the webpage isn't loading. Because it can result in percentages like -10 or +10 prior to even scrolling.
+        if (!webView.isLoading){
+            dataModel.checkProgress(scrollView.contentSize.height, scrollView.contentOffset.y)
+        }
     }
     
     
