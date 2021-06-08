@@ -16,7 +16,6 @@ class NewsViewModel {
         didSet{
             articles = articles.filter({$0.url.contains("https:")})
             reloadTableView?()
-            print(articles)
         }
     }
     

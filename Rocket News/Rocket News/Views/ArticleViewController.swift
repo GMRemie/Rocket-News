@@ -12,11 +12,13 @@ class ArticleViewController: UIViewController {
     
     
     @IBOutlet weak var webView: WKWebView!
-    var dataModel = ArticleViewModel()
     var article: Article?
-    
+    var dataModel: ArticleViewModel?
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        dataModel = ArticleViewModel(article!)
         
         guard let article = article else {
             return
@@ -25,13 +27,20 @@ class ArticleViewController: UIViewController {
         
         setupWeb()
 
+        // Hook into the view models functions
+        
+        dataModel!.closeView = {
+            DispatchQueue.main.async {
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+
     }
     
     
     
     @IBAction func closeArticleClicked(_ sender: UIBarButtonItem) {
-        
-        self.dismiss(animated: true, completion: nil)
+        dataModel!.prepareToClose()
     }
     
     
@@ -53,7 +62,7 @@ extension ArticleViewController: WKUIDelegate, WKNavigationDelegate, UIScrollVie
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         // Make sure the webpage isn't loading. Because it can result in percentages like -10 or +10 prior to even scrolling.
         if (!webView.isLoading){
-            dataModel.checkProgress(scrollView.contentSize.height, scrollView.contentOffset.y)
+            dataModel!.checkProgress(scrollView.contentSize.height, scrollView.contentOffset.y)
         }
     }
     
