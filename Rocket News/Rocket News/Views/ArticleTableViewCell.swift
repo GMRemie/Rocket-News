@@ -9,6 +9,12 @@ import UIKit
 
 class ArticleTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var thumbnail: UIImageView!
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var source: UILabel!
+    @IBOutlet weak var progress: UILabel!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -18,6 +24,13 @@ class ArticleTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    public func populateCell(_ article: Article){
+        // do thumbnail image
+        title.text = article.title
+        source.text = article.newsSite
+        progress.text = "0%"
     }
     
 }

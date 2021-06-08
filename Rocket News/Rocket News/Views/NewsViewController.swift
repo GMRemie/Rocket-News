@@ -16,6 +16,12 @@ class NewsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        tableView.register(UINib(nibName: "ArticleTableViewCell", bundle: .main), forCellReuseIdentifier: "cell")
+
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 260
+
+        
         dataModel.reloadTableView = {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -44,10 +50,10 @@ extension NewsViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataModel.numberOfCells
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! UITableViewCell
-        cell.textLabel?.text = dataModel.cellAtIndex(indexPath.row).title
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! ArticleTableViewCell
+        cell.populateCell(dataModel.cellAtIndex(indexPath.row))
         return cell
     }
     
