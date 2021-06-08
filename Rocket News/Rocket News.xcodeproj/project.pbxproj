@@ -38,6 +38,10 @@
 		D443CC89266F04FF0091DFF2 /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC86266F04FF0091DFF2 /* CoreDataHelper.swift */; };
 		D443CC8B266F32F10091DFF2 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC8A266F32F10091DFF2 /* HistoryViewModel.swift */; };
 		D443CC8C266F32F10091DFF2 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC8A266F32F10091DFF2 /* HistoryViewModel.swift */; };
+		D443CC90266FEBD00091DFF2 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC8E266FEBD00091DFF2 /* ArticleTableViewCell.swift */; };
+		D443CC91266FEBD00091DFF2 /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC8E266FEBD00091DFF2 /* ArticleTableViewCell.swift */; };
+		D443CC92266FEBD00091DFF2 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CC8F266FEBD00091DFF2 /* ArticleTableViewCell.xib */; };
+		D443CC93266FEBD00091DFF2 /* ArticleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D443CC8F266FEBD00091DFF2 /* ArticleTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +86,8 @@
 		D443CC81266EBC220091DFF2 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		D443CC86266F04FF0091DFF2 /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 		D443CC8A266F32F10091DFF2 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		D443CC8E266FEBD00091DFF2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
+		D443CC8F266FEBD00091DFF2 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +138,7 @@
 		D443CC33266EA8360091DFF2 /* Rocket News */ = {
 			isa = PBXGroup;
 			children = (
+				D443CC8D266FEBA40091DFF2 /* Nibs */,
 				D443CC85266F04F50091DFF2 /* Helpers */,
 				D443CC6A266EA8720091DFF2 /* Extensions */,
 				D443CC69266EA86C0091DFF2 /* View Models */,
@@ -177,6 +184,7 @@
 		D443CC68266EA8620091DFF2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D443CC8E266FEBD00091DFF2 /* ArticleTableViewCell.swift */,
 				D443CC6D266EA96C0091DFF2 /* IntroViewController.swift */,
 				D443CC70266EB3C30091DFF2 /* NewsViewController.swift */,
 				D443CC73266EB3CB0091DFF2 /* HistoryViewController.swift */,
@@ -209,6 +217,14 @@
 				D443CC86266F04FF0091DFF2 /* CoreDataHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D443CC8D266FEBA40091DFF2 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				D443CC8F266FEBD00091DFF2 /* ArticleTableViewCell.xib */,
+			);
+			path = Nibs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +330,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D443CC92266FEBD00091DFF2 /* ArticleTableViewCell.xib in Resources */,
 				D443CC44266EA8370091DFF2 /* LaunchScreen.storyboard in Resources */,
 				D443CC41266EA8370091DFF2 /* Assets.xcassets in Resources */,
 				D443CC3C266EA8360091DFF2 /* Main.storyboard in Resources */,
@@ -331,6 +348,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D443CC93266FEBD00091DFF2 /* ArticleTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -353,6 +371,7 @@
 				D443CC7F266EBBA60091DFF2 /* ArticleViewController.swift in Sources */,
 				D443CC37266EA8360091DFF2 /* SceneDelegate.swift in Sources */,
 				D443CC8B266F32F10091DFF2 /* HistoryViewModel.swift in Sources */,
+				D443CC90266FEBD00091DFF2 /* ArticleTableViewCell.swift in Sources */,
 				D443CC77266EB5110091DFF2 /* NewsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D443CC91266FEBD00091DFF2 /* ArticleTableViewCell.swift in Sources */,
 				D443CC72266EB3C30091DFF2 /* NewsViewController.swift in Sources */,
 				D443CC84266EBC220091DFF2 /* ArticleViewModel.swift in Sources */,
 				D443CC5A266EA8370091DFF2 /* Rocket_NewsUITests.swift in Sources */,
