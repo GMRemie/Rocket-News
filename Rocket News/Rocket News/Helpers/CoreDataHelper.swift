@@ -17,8 +17,10 @@ class CoreDataHelper {
     var progress: Float = 0.0
     
     
-    
-    
+    // Coredata initializer for unit tests, this context saves data into memory rather than disk.
+    init(_ context: NSManagedObjectContext) {
+        self.context = context
+    }
     
     // Initializer for general usage in History tab
     init(_ appDelegate: AppDelegate) {
@@ -37,9 +39,6 @@ class CoreDataHelper {
 
     func saveArticle(_ article: Article){
         
-        print("\(article.id) - \(article.title) -- saving new at \(progress)")
-        
-        context = appDelegate!.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Articles", in: context)
         let articleObj = NSManagedObject(entity: entity!, insertInto: context)
 

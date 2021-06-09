@@ -32,6 +32,7 @@
 		D443CC9F267011860091DFF2 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC81266EBC220091DFF2 /* ArticleViewModel.swift */; };
 		D443CCA0267011890091DFF2 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC8A266F32F10091DFF2 /* HistoryViewModel.swift */; };
 		D443CCA2267011A10091DFF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CC34266EA8360091DFF2 /* AppDelegate.swift */; };
+		D443CCA42670350F0091DFF2 /* CoreDataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D443CCA32670350F0091DFF2 /* CoreDataTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		D443CC8A266F32F10091DFF2 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
 		D443CC8E266FEBD00091DFF2 /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		D443CC8F266FEBD00091DFF2 /* ArticleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArticleTableViewCell.xib; sourceTree = "<group>"; };
+		D443CCA32670350F0091DFF2 /* CoreDataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +133,7 @@
 			children = (
 				D443CC4E266EA8370091DFF2 /* Rocket_NewsTests.swift */,
 				D443CC50266EA8370091DFF2 /* Info.plist */,
+				D443CCA32670350F0091DFF2 /* CoreDataTest.swift */,
 			);
 			path = "Rocket NewsTests";
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D443CCA42670350F0091DFF2 /* CoreDataTest.swift in Sources */,
 				D443CC9D267011800091DFF2 /* CoreDataHelper.swift in Sources */,
 				D443CCA0267011890091DFF2 /* HistoryViewModel.swift in Sources */,
 				D443CC4F266EA8370091DFF2 /* Rocket_NewsTests.swift in Sources */,

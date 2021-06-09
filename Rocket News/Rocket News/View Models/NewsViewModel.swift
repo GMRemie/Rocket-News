@@ -19,13 +19,6 @@ class NewsViewModel {
         }
     }
     
-    func loadImages(){
-        
-        
-        
-    }
-    
-    
     var numberOfCells: Int {
         get {
             return articles.count
@@ -35,10 +28,8 @@ class NewsViewModel {
     public func cellAtIndex( _ indexPath: Int ) -> Article {
         return articles[indexPath]
     }
-
-
     
-    var url = URL(string: "https://api.spaceflightnewsapi.net/v3/articles")
+    let url = URL(string: "https://api.spaceflightnewsapi.net/v3/articles")
     private var cancellable: AnyCancellable?
 
     internal func request(){

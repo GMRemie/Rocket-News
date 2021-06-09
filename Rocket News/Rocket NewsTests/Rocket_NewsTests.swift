@@ -6,9 +6,11 @@
 //
 
 import XCTest
-
+import CoreData
 class Rocket_NewsTests: XCTestCase {
 
+
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -87,14 +89,161 @@ class Rocket_NewsTests: XCTestCase {
         }
         
         dataModel.request()
+        
     }
     
 
     
-    //MARK:: Article Tests
+    //MARK:: CoreData Tests
     /*  ------------------- */
 
- 
+    // Test to see that article objects can be created from CoreData's Data.
+    func testArticleCreation(){
+        
+        let coreDataTest = CoreDataTest()
+        let random = Int.random(in: 1..<500)
+
+        let entity = NSEntityDescription.entity(forEntityName: "Articles", in: coreDataTest.managedObjectContext!)
+        let articleObj = NSManagedObject(entity: entity!, insertInto: coreDataTest.managedObjectContext!)
+
+        articleObj.setValue(random, forKey: "id")
+        articleObj.setValue("New title! \(random)", forKey: "title")
+        articleObj.setValue("summary", forKey: "summary")
+        articleObj.setValue("datehere", forKey: "publishedAt")
+        articleObj.setValue("https://www.google.com", forKey: "imageUrl")
+        articleObj.setValue("https://www.google.com", forKey: "newsSite")
+        articleObj.setValue(50.0, forKey: "progress")
+        articleObj.setValue("https://www.google.com", forKey: "url")
+        
+        let article = Article(articleObj)
+        
+        XCTAssertEqual(article.id, random)
+        XCTAssertEqual(50.0, article.progress)
+        
+    }
+    // This test displays both saving and loading functionality.
     
+    func testCoreDataSaving(){
+        
+        let coreDataTest = CoreDataTest()
+        // Check to see if the db is empty
+        XCTAssert(coreDataTest.coreDataHelper!.loadArticles().isEmpty)
+        
+        // Create dummy object
+        let random = Int.random(in: 1..<500)
+
+        let entity = NSEntityDescription.entity(forEntityName: "Articles", in: coreDataTest.managedObjectContext!)
+        let articleObj = NSManagedObject(entity: entity!, insertInto: coreDataTest.managedObjectContext!)
+
+        articleObj.setValue(random, forKey: "id")
+        articleObj.setValue("New title! \(random)", forKey: "title")
+        articleObj.setValue("summary", forKey: "summary")
+        articleObj.setValue("datehere", forKey: "publishedAt")
+        articleObj.setValue("https://www.google.com", forKey: "imageUrl")
+        articleObj.setValue("https://www.google.com", forKey: "newsSite")
+        articleObj.setValue(50.0, forKey: "progress")
+        articleObj.setValue("https://www.google.com", forKey: "url")
+        
+        let article = Article(articleObj)
+        
+        // Save Dummy object
+        
+        coreDataTest.coreDataHelper!.attemptUpdate(article)
+        
+        // See if it exists
+        
+        XCTAssertFalse(coreDataTest.coreDataHelper!.loadArticles().isEmpty)
+        XCTAssertEqual(coreDataTest.coreDataHelper!.loadArticles()[0].id, random)
+    }
+    
+    
+    func testAttemptUpdate(){
+        
+        let coreDataTest = CoreDataTest()
+        // Check to see if the db is empty
+        XCTAssert(coreDataTest.coreDataHelper!.loadArticles().isEmpty)
+        
+        // Create dummy object
+        let random = Int.random(in: 1..<500)
+
+        let entity = NSEntityDescription.entity(forEntityName: "Articles", in: coreDataTest.managedObjectContext!)
+        let articleObj = NSManagedObject(entity: entity!, insertInto: coreDataTest.managedObjectContext!)
+
+        articleObj.setValue(random, forKey: "id")
+        articleObj.setValue("New title! \(random)", forKey: "title")
+        articleObj.setValue("summary", forKey: "summary")
+        articleObj.setValue("datehere", forKey: "publishedAt")
+        articleObj.setValue("https://www.google.com", forKey: "imageUrl")
+        articleObj.setValue("https://www.google.com", forKey: "newsSite")
+        articleObj.setValue(50.0, forKey: "progress")
+        articleObj.setValue("https://www.google.com", forKey: "url")
+        
+        let article = Article(articleObj)
+        
+        // Save Dummy object
+        
+        coreDataTest.coreDataHelper!.attemptUpdate(article)
+        
+        // See if it exists
+        
+        XCTAssertFalse(coreDataTest.coreDataHelper!.loadArticles().isEmpty)
+        XCTAssertEqual(coreDataTest.coreDataHelper!.loadArticles()[0].id, random)
+        XCTAssertEqual(coreDataTest.coreDataHelper!.loadArticles()[0].title, article.title)
+
+        // Wipe out
+        
+        // Carried on from above test.
+        // Update the article
+        articleObj.setValue("Rocket News!", forKey: "title")
+        let newArticle = Article(articleObj)
+        coreDataTest.coreDataHelper!.attemptUpdate(newArticle)
+        XCTAssertFalse(coreDataTest.coreDataHelper!.loadArticles().isEmpty)
+        XCTAssertEqual(coreDataTest.coreDataHelper!.loadArticles()[0].id, random)
+        XCTAssertEqual(coreDataTest.coreDataHelper!.loadArticles()[0].title, newArticle.title)
+        
+    }
+    
+   
+    //MARK:: Article ViewModel Tests
+    
+    func testCheckProgress(){
+        
+        let coreDataTest = CoreDataTest()
+        let random = Int.random(in: 1..<500)
+
+        let entity = NSEntityDescription.entity(forEntityName: "Articles", in: coreDataTest.managedObjectContext!)
+        let articleObj = NSManagedObject(entity: entity!, insertInto: coreDataTest.managedObjectContext!)
+
+        articleObj.setValue(random, forKey: "id")
+        articleObj.setValue("New title! \(random)", forKey: "title")
+        articleObj.setValue("summary", forKey: "summary")
+        articleObj.setValue("datehere", forKey: "publishedAt")
+        articleObj.setValue("https://www.google.com", forKey: "imageUrl")
+        articleObj.setValue("https://www.google.com", forKey: "newsSite")
+        articleObj.setValue(50.0, forKey: "progress")
+        articleObj.setValue("https://www.google.com", forKey: "url")
+        
+        let article = Article(articleObj)
+        
+        let articleVM = ArticleViewModel(article)
+        
+        // Make sure its currently empty.
+        XCTAssertEqual(articleVM.progress, 0.0)
+        
+        // Signal that a scroll has occured
+        articleVM.checkProgress(100.0, 50.0)
+        
+        // Updated progress should be 50%
+        XCTAssertEqual(articleVM.progress, 50.0)
+        
+        // Signal that a scroll has occured for the full ESTIMATE of the page
+        articleVM.checkProgress(100.0, 65.0)
+        
+        // Signal again that a scroll has occured for the full page
+        articleVM.checkProgress(100.0, 100.0)
+        
+        // Check to see the current scroll progress. It should be 65 since that is the cap, and the last signal should not have progressed.
+        XCTAssertEqual(articleVM.progress, 65.0)
+    }
     
 }
