@@ -12,7 +12,7 @@ class IntroViewController: UIViewController {
     @IBOutlet weak var startReadingBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.view.layoutIfNeeded()
         startReadingBtn.roundCorners()
     }
     
