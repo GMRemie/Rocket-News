@@ -11,3 +11,5 @@ The idea of this project is to utilize the spaceship news API ( in the GitHub li
 - CoreData
 - WebKit
 
+![Screenshot](png3.png)
+![Screenshot](png4.png)
