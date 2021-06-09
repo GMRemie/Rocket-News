@@ -17,23 +17,24 @@ class CoreDataHelper {
     var progress: Float = 0.0
     
     
-    // Coredata initializer for unit tests, this context saves data into memory rather than disk.
+    // Coredata initializer for unit tests, this context saves data into memory rather than disk. Refer to CoreDataTest for more info.
     init(_ context: NSManagedObjectContext) {
         self.context = context
     }
     
-    // Initializer for general usage in History tab
+    // Initializer for general usage, such as HistoryViewModel.
     init(_ appDelegate: AppDelegate) {
         self.appDelegate = appDelegate
         context = appDelegate.persistentContainer.viewContext
     }
     
     
-    // Initializer for saving articles
+    // Initializer for directly saving an article.
     init(_ appDelegate: AppDelegate, _ article: Article, _ progress: Float) {
         self.appDelegate = appDelegate
         self.progress = progress
         context = appDelegate.persistentContainer.viewContext
+        // Attempt update is called first, because it will either update an existing entry, or save a new entry.
         attemptUpdate(article)
     }
 
@@ -51,8 +52,6 @@ class CoreDataHelper {
         articleObj.setValue(progress, forKey: "progress")
         articleObj.setValue(article.url, forKey: "url")
 
-        
-        print("Saving Data..")
         do {
             try context.save()
         } catch {
@@ -64,15 +63,14 @@ class CoreDataHelper {
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Articles")
         request.returnsObjectsAsFaults = false
+        // Use a predicate to check to see if an entry exists with the current uuid.
         request.predicate = NSPredicate(format: "id = %ld", article.id)
-        
         
         var results: [Any] = []
         
         do {
             results = try context.fetch(request)
             for data in results as! [NSManagedObject] {
-                print("The article already exists! Saving at \(progress)")
                 // Since the data exists, update the progress here.
                 data.setValue(progress, forKey: "progress")
             }
@@ -81,42 +79,24 @@ class CoreDataHelper {
         }
         
         if (results.count == 0 ) {
+            // Since the entry doesn't exist, save a new one.
             saveArticle(article)
         }
     }
-    
-    
-    func deleteAll(){
-        
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Articles")
-        request.returnsObjectsAsFaults = false
-        do {
-            let result = try context.fetch(request)
-            for data in result as! [NSManagedObject] {
-                context.delete(data)
-                try context.save()
-                print("Deleting article")
-            }
-        } catch {
-            print("Error loading data")
-        }
-    }
-    
-    
+
     func loadArticles() -> [Article]{
         var articles:[Article] = []
         
         let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Articles")
         request.returnsObjectsAsFaults = false
         
-    
         do {
             let result = try context.fetch(request)
             for data in result as! [NSManagedObject] {
                 articles.append(Article(data))
             }
         } catch {
-            print("Error loading data")
+            print("Error loading data \(error.localizedDescription)")
         }
         
         articles.sorted(by: {$0.title > $1.title})

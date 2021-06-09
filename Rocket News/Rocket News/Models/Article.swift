@@ -26,15 +26,15 @@ struct Article: Codable {
         case id,title,url,imageUrl,newsSite,publishedAt,summary
     }
     
-
+    // Initializer for CoreData entities
     init(_ data: NSManagedObject) {
         self.id = data.value(forKey: "id") as! Int
         self.title = data.value(forKey: "title") as! String
         self.url = data.value(forKey: "url") as! String
         self.imageUrl = data.value(forKey: "imageUrl") as! String
         self.newsSite = data.value(forKey: "newsSite") as! String
-        self.publishedAt = data.value(forKey: "publishedAt") as? String ?? ""
-        self.summary = data.value(forKey: "summary") as? String ?? ""
+        self.publishedAt = data.value(forKey: "publishedAt") as! String
+        self.summary = data.value(forKey: "summary") as! String
         self.progress = data.value(forKey: "progress") as! Float
     }
     

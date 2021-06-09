@@ -28,6 +28,7 @@ class HistoryViewModel {
         articles = coreDataHelper!.loadArticles()
     }
     
+    // Called when viewdidappear. Refreshes the view, to make sure any progress is updated.
     func refreshProgress(){
         articles.removeAll()
         articles = coreDataHelper!.loadArticles()

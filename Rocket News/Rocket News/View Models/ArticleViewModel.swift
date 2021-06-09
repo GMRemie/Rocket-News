@@ -27,23 +27,24 @@ class ArticleViewModel {
         self.article = article
     }
     
-    
+    // Before the article viewer closes, save the progress into the CoreData db first.
     func prepareToClose(){
         let _ = CoreDataHelper((UIApplication.shared.delegate as! AppDelegate ), article!, Float(progress))
 
         closeView?()
-        
     }
 
     
-    
+    /*
+     Check progress takes in the scroll bars information.
+     If only runs the math if the page isn't considered completed.
+     This way you don't go from completed, to uncompleted.
+     */
     func checkProgress(_ contentHeight: CGFloat, _ contentOffSet: CGFloat){
         
         if (progress < estimateCompleted){
             
             let currentProgress = (contentOffSet / contentHeight) * 100
-                
-            print("Progress \(currentProgress)%")
             progress = currentProgress
 
         }

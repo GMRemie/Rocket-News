@@ -17,14 +17,15 @@ class HistoryViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Register Nib
         tableView.register(UINib(nibName: "ArticleTableViewCell", bundle: .main), forCellReuseIdentifier: "cell")
 
+        // Setup table view cell autoscaling
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 260
+        tableView.estimatedRowHeight = 90
 
         
-        
+        // setup our datamodel with an app delegate so that it accesses the CoreData disk storage.
         dataModel = HistoryViewModel(UIApplication.shared.delegate as! AppDelegate)
 
         // Do any additional setup after loading the view.

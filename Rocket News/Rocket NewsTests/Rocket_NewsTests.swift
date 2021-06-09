@@ -60,7 +60,6 @@ class Rocket_NewsTests: XCTestCase {
         dataModel.request()
     }
     
-    
     func testNumberOfCells() {
         let dataModel = NewsViewModel()
         
@@ -81,6 +80,7 @@ class Rocket_NewsTests: XCTestCase {
         
         dataModel.request()
     }
+    // Makes sure the reload functions call works successfully. NewsViewModel.request() calls upon the reload function.
     func testReloadFuncCall(){
         let dataModel = NewsViewModel()
         
@@ -121,8 +121,9 @@ class Rocket_NewsTests: XCTestCase {
         XCTAssertEqual(50.0, article.progress)
         
     }
-    // This test displays both saving and loading functionality.
     
+
+    // This test displays both saving and loading functionality.
     func testCoreDataSaving(){
         
         let coreDataTest = CoreDataTest()
@@ -190,8 +191,6 @@ class Rocket_NewsTests: XCTestCase {
         XCTAssertEqual(coreDataTest.coreDataHelper!.loadArticles()[0].id, random)
         XCTAssertEqual(coreDataTest.coreDataHelper!.loadArticles()[0].title, article.title)
 
-        // Wipe out
-        
         // Carried on from above test.
         // Update the article
         articleObj.setValue("Rocket News!", forKey: "title")

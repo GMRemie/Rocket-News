@@ -15,13 +15,14 @@ class NewsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        // Register nib
         tableView.register(UINib(nibName: "ArticleTableViewCell", bundle: .main), forCellReuseIdentifier: "cell")
-
+        
+        // Setup autoscaling table view cells.
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 90
 
-        
+        // Map into our viewmodels reload function, and always update UI on main thread.
         dataModel.reloadTableView = {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
@@ -41,9 +42,6 @@ class NewsViewController: UIViewController {
             }
         }
     }
-
-
-
 }
 
 extension NewsViewController: UITableViewDelegate, UITableViewDataSource {

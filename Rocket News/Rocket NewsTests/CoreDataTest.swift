@@ -14,11 +14,11 @@ class CoreDataTest{
     var managedObjectContext: NSManagedObjectContext?
     var coreDataHelper: CoreDataHelper?
     
+    // This is used purely for unit tests. It allows us to save/load data into CoreData but rather than disk its in the memory.
     
-
     init() {
         
-        
+        // Create a memory container for CoreData
         let persistentStoreDescription = NSPersistentStoreDescription()
         persistentStoreDescription.type = NSInMemoryStoreType
         
